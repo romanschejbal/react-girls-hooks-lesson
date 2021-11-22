@@ -3,19 +3,17 @@ import './App.css';
 //import Button from './components/Button';
 import Students from './Students';
 
-// map, sort, filter, some, find
-
 const App = () => {
   return (
     <div className="App">
-      <ul>
-        <Students />
-      </ul>
+      <Students />
     </div>
   );
 }
 
 export default App;
+
+// map, sort, filter, some, find
 
 // const filteredGirls = dataArray.filter(girls => girls.gender === "F");
 // const mappedGirls = filteredGirls.map(girl => <div>{girl.firstName}</div>);
