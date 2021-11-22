@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -35,4 +41,41 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.testButton {
+  background: green;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.item {
+  display: flex;
+  background: #ff8364;
+  color: white;
+  list-style-type: none;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.girls {
+  background: #5f6caf;
+}
+
+.initials {
+  background: #ffb677;
+  padding: 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
 }
