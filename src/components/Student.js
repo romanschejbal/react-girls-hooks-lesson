@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 const Student = ({ isThisFemale, firstName, lastName, house, initials }) => {
     const [jabbed, setJabbed] = useState(false);
-    const [displayHouse, setDisplayHouse] = useState(false);
+    // const [displayHouse, setDisplayHouse] = useState(false);
 
     const genderClassName = isThisFemale ? "item girls" : "item";
     const jabbedClassName = jabbed ? 'jabbed' : '';
@@ -11,14 +11,14 @@ const Student = ({ isThisFemale, firstName, lastName, house, initials }) => {
         setJabbed(jabbed + 1);
     }
 
-    useEffect(() => {
-        if (jabbed > 0 && !displayHouse) {
-            setTimeout(() => {
-                console.log('HELLO', new Date())
-                setDisplayHouse(true);
-            }, 3000);
-        }
-    }, [jabbed, displayHouse])
+    // useEffect(() => {
+    //     if (jabbed > 0 && !displayHouse) {
+    //         setTimeout(() => {
+    //             console.log('HELLO', new Date())
+    //             setDisplayHouse(true);
+    //         }, 3000);
+    //     }
+    // }, [jabbed, displayHouse])
 
     return (
         <li className={genderClassName + ' ' + jabbedClassName}>
@@ -27,7 +27,8 @@ const Student = ({ isThisFemale, firstName, lastName, house, initials }) => {
                 <div className='initials'>{initials}</div>
                 <div>{firstName} {lastName}</div>
             </div>
-            {displayHouse > 0 &&<div>{house}</div>}
+            {/* {displayHouse > 0 &&<div>{house}</div>} */}
+            <div>{house}</div>
         </li>
     )
 }

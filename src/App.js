@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 //import Button from './components/Button';
 import Students from './Students';
 
 const App = () => {
+  const [displayStudents, setDisplayStudents] = useState(false)
+
+  const toggleDisplayStudents = () => setDisplayStudents(!displayStudents);
+
   return (
     <div className="App">
-      <Students />
+      <button onClick={toggleDisplayStudents}>Display / Hide</button>
+      {displayStudents ? <Students /> : null}
     </div>
   );
 }
