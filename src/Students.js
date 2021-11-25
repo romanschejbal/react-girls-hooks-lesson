@@ -1,6 +1,6 @@
 import React from 'react';
 import { dataArray } from './data';
-import ListItem from './components/ListItem';
+import Student from './components/Student';
 
 const Students = () => {
     return (
@@ -10,7 +10,7 @@ const Students = () => {
                 const initials = `${student.firstName.charAt(0)}${student.lastName.charAt(0)}`;
 
                 return (
-                    <ListItem isThisFemale={isThisFemale} firstName={student.firstName} lastName={student.lastName} house={student.house} initials={initials} />
+                    <Student isThisFemale={isThisFemale} firstName={student.firstName} lastName={student.lastName} house={student.house} initials={initials} />
                 )
             })}
         </ul>

@@ -1,3 +1,7 @@
+body {
+  background: #111;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -78,4 +82,8 @@
 .name {
   display: flex;
   align-items: center;
+}
+
+.jabbed {
+  border: 5px solid lightgreen;
 }
