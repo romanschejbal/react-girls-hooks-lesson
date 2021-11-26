@@ -6,7 +6,7 @@ const Students = () => {
     const [isLoading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true)
-        fetch('http://18.157.175.137/students')
+        fetch('http://18.157.77.111/students')
             .then(response => response.json())
             .then(json => {
                 setStudents(json);

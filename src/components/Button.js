@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Button = ({ title, subTitle }) => {
-    return (
-        <button className="testButton">
-            <span>{title}</span>
-            <br />
-            <span>{subTitle}</span>
-        </button>
-    )
-}
+const Button = ({ children, onClick }) => {
+  return (
+    <button
+      className="bg-indigo-600 py-2 px-8 text-white rounded-lg"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
 
 export default Button;

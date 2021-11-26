@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  body {
+    @apply mx-4;
+  }
+
+  .app {
+    @apply container mx-auto max-w-2xl;
+  }
+
+  .nav {
+    @apply flex justify-center gap-2 mb-4;
+  }
+
+  .intro-image {
+    @apply w-auto max-w-full mx-auto my-8;
+  }
+
+  main {
+    @apply flex flex-col py-8;
+  }
+
+  /* students */
+
+  .list-student {
+    @apply flex justify-between items-center transition-all duration-300 py-2 px-4 mb-4 rounded-xl bg-indigo-200 shadow-md hover:bg-indigo-600 hover:text-white;
+  }
+
+  .list-student-inner {
+    @apply flex gap-4 items-center;
+  }
+
+  .list-initials {
+    @apply bg-white text-indigo-600 w-10 h-10 flex justify-center items-center rounded-full shadow-inner;
+  }
+
+  /* detail */
+  .student-detail-container {
+    @apply bg-indigo-100 rounded-lg p-8 flex flex-col items-center;
+  }
+
+  .student-detail-initials {
+    @apply my-2 text-6xl w-40 h-40 bg-indigo-600 text-white shadow-inner flex justify-center items-center rounded-full border-2 border-white;
+  }
+
+  .student-detail-name {
+    @apply text-2xl text-center my-4;
+  }
 }
