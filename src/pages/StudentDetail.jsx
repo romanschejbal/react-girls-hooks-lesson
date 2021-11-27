@@ -7,7 +7,7 @@ import { Field, Form, Formik } from 'formik';
 export function StudentDetail(props) {
   const [editMode, setEditMode] = useState(false);
 
-  const { data, loading, refetch } = useGetJSON(
+  const { data, loading } = useGetJSON(
     'http://18.157.77.111/students/' + props.student.id
   );
 
@@ -33,7 +33,6 @@ export function StudentDetail(props) {
             }).then((response) => {
               if (response.ok) {
                 setEditMode(false);
-                refetch();
               }
             });
           }}
@@ -44,7 +43,7 @@ export function StudentDetail(props) {
             <Field name="gender" type="text" className="input" />
             <Field name="house" type="text" className="input" />
             <Field name="year" type="number" className="input" />
-            <button type="submit" className="input">
+            <button type="submit" className="input bg-indigo-600 text-white">
               Submit
             </button>
           </Form>
