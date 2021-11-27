@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Maybe } from '../components/Maybe';
+import { Button } from '../components/Button';
 import { useGetJSON } from '../hooks/useGetJSON';
 
 export function StudentDetail(props) {
@@ -32,7 +33,7 @@ export function StudentDetail(props) {
           <Maybe fallback="Chybí description">{data.description}</Maybe>
         </p>
       )}
-      {/* <Button /> */}
+      <Button onClick={() => setEditMode(true)}>Upravit</Button>
     </div>
   );
 }
