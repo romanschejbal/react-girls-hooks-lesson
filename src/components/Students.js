@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useGetJSON } from '../hooks/useGetJSON';
 import Student from './Student';
 
 const Students = (props) => {
-  const [students, setStudents] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const { data: students, loading } = useGetJSON(
+    'http://18.157.77.111/students'
+  );
 
-  useEffect(() => {
-    // setLoading(true);
-    fetch('http://18.157.77.111/students')
-      .then((response) => response.json())
-      .then((json) => {
-        setStudents(json);
-        setLoading(false);
-      });
-  }, []);
-
-  if (isLoading) {
-    return <div>Načítám...</div>;
+  if (loading) {
+    return <p>Načítám seznam studentů...</p>;
   }
 
   return (
     <ul>
-      {students.map((student) => {
+      {students?.map((student) => {
         const isThisFemale = student.gender === 'F';
         const initials = `${student.firstName.charAt(
           0
